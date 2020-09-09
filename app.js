@@ -14,12 +14,12 @@ const $consoleColor = {
 
 const SUB =
   {
-    develop: 'https://consult.gxmuyfy.cn:2443', // 开发版
-    trial: 'https://consult.gxmuyfy.cn:2443', // 体验版
-    release: 'https://consult.gxmuyfy.cn:2443' // 线上版
+    develop: '', // 开发版
+    trial: '', // 体验版
+    release: '' // 线上版
   }[__wxConfig.envVersion] || ''
 
-const APIHOST = 'https://consult.gxmuyfy.cn:2443'
+const APIHOST = ''
 // https://consult.healthan.net
 
 App({
