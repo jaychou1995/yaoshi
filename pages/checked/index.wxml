@@ -1,0 +1,28 @@
+<!--pages/checked/index.wxml-->
+<view class="container">
+  <view class="pieces">共{{total || 0}}条</view>
+  <van-tabs active="{{ 0 }}" border="{{false}}">
+    <van-tab title="全部">
+      <view class="content" wx:if="{{dataList.length > 0}}">
+        <van-cell-group custom-class="card" wx:for="{{dataList}}" wx:key="index">
+          <van-cell
+            bind:click="toDetail"
+            custom-class="card-cell"
+            data-id="{{item.id}}"
+            label="处方编号：{{item.presCode}}"
+            label-class="card-label"
+            title="{{item.patientName}} {{item.createTime}}"
+            title-class="card-title"
+            title-width="500rpx"
+          >
+            <van-tag plain round slot="right-icon" type="primary" wx:if="{{item.presType === 1}}">西药</van-tag>
+            <van-tag plain round slot="right-icon" type="primary" wx:if="{{item.presType === 4}}">中药</van-tag>
+            <image class="item-state" src="/images/tg.png" wx:if="{{item.status === 3 || item.status === 6}}" />
+            <image class="item-state" src="/images/bh.png" wx:if="{{item.status === 7}}" />
+          </van-cell>
+        </van-cell-group>
+      </view>
+      <errMsg wx:else />
+    </van-tab>
+  </van-tabs>
+</view>

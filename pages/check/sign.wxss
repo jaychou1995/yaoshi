@@ -1,0 +1,38 @@
+/* pages/check/sign.wxss */
+.container{
+  width: 100vm;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title{
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 40rpx 0;
+}
+.images-box{
+  width: 690rpx;
+  height: 500rpx;
+  border-radius: 10px;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.autograph-image{
+  width: 474rpx;
+  height: 185rpx;
+}
+.tips{
+  font-size: 14px;
+  color: #999999;
+  margin: 40rpx 0;
+}
+.btn{
+  width: 600rpx!important;
+  border-radius: 10px!important;
+}

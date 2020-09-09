@@ -1,0 +1,37 @@
+<!--pages/check/reason.wxml-->
+<view class="container">
+  <!-- <view class="cell">处方编号：<text style="color: #666666">223423423423</text></view>
+  <view class="cell">姓名：<text style="color: #666666">哈哈哈</text></view>-->
+  <!-- <van-cell title="处方编号" value="{{presCode}}" /> -->
+  <!-- <van-cell title="姓名" value="哈哈哈" /> -->
+  <!-- <view class="cell">
+    <text>驳回原因</text>
+      <picker
+        bindchange="bindReasonChange"
+        mode="selector"
+        range="{{reasonList}}"
+        class="pickeron"
+        value="{{index}}"
+      >
+        <span class="picker">{{reason}}</span>
+        <van-icon name="arrow-down" custom-class="arrow-down"/>
+      </picker>
+  </view>-->
+  <view class="cell">驳回备注</view>
+  <view class="section">
+    <textarea bind:input="wordlimit" class="textarea" maxlength="100" placeholder="请输入备注" value="{{rejectContent}}">
+      <text class="text-count">{{count}}/100</text>
+    </textarea>
+  </view>
+
+  <van-button bind:tap="confirm" block custom-class="btn" type="info">确认驳回</van-button>
+
+  <van-popup bind:click-overlay="onClose" bind:close="onClose" show="{{ showAutograph }}">
+    <view class="popup-content">
+      <view class="popup-content-title">授权签名</view>
+      <van-field bind:change="setpassword" placeholder="请输入密码" type="password" value="{{ password }}" />
+      <view class="err-msg">{{errmsg}}</view>
+      <van-button bind:tap="getAutograph" custom-class="get-btn" type="info">请求签名</van-button>
+    </view>
+  </van-popup>
+</view>

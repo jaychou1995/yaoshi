@@ -1,0 +1,66 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="index" wx:if="{{show}}">
+    <view class="container-top-bg">
+      <image class="bg-image" src="/images/index.png" />
+      <view class="card">
+        <view class="card-user-content">
+          <image
+            class="user-image"
+            src="{{userInfo.avatar || 'https://s.beta.gtimg.com/hospital_img/static/res/ico-doctor-normal.png'}}"
+          />
+          <view class="user-info">
+            <view>
+              <text class="user-name">{{userInfo.name}}</text>
+              <!-- <text class="remarks">副主任药师</text> -->
+            </view>
+            <!-- <view>
+              <text class="remarks">注册证编号：00012451</text>
+            </view>-->
+            <view>
+              <text class="remarks">{{APPNAME}}</text>
+            </view>
+          </view>
+          <!-- <image src="/images/ewm.png" class="qrcode"/> -->
+        </view>
+      </view>
+    </view>
+
+    <view class="container-content">
+      <view class="examine">
+        <view bind:tap="toCheck" class="examine-item" data-url="/pages/check/index">
+          <image class="examine-item-image" src="/images/dsh.png" />
+          <view class="examine-item-text">
+            待审核
+            <!-- <view class="text-dog">9</view> -->
+          </view>
+        </view>
+        <view bind:tap="toCheck" class="examine-item" data-url="/pages/checked/index">
+          <image class="examine-item-image" src="/images/ysh.png" />
+          <view class="examine-item-text">已审核</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="authorize" wx:else>
+    <view class="container-top-bg">
+      <image class="bg-image" src="/images/index.png"/>
+      <view class="card-authorize">
+        <view class="card-content text-center">
+          <view class="card-content-text">您已成功登陆，可授权使用当前微信登陆</view>
+          <view class="text-center content-icon">
+            <image src="/images/wx.png" class="wxlogo" />
+          </view>
+          <view class="text-center">
+            <van-button type="default" custom-class="content-btn" bind:tap="agreeAuthorize">暂不授权</van-button>
+            <van-button type="info" custom-class="content-btn" bind:tap="agreeAuthorize">同意授权</van-button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>-->
+  <view class="loading" wx:else>
+    <van-loading color="#1989fa" size="50px" vertical>登录中...</van-loading>
+  </view>
+</view>

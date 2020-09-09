@@ -1,0 +1,132 @@
+/* pages/check/confirm.wxss */
+.header{
+  position: relative;
+  width: 100%;
+  height: 120rpx;
+  text-align: center;
+}
+.header-title,.content-title{
+  line-height: 60px;
+  font-size: 18px;
+  vertical-align: middle;
+  font-weight:bold;
+}
+.tag{
+  margin-left: 20rpx;
+}
+.info-cell{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 32rpx;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.cell-item{
+  flex: 1;
+}
+.flex-more{
+  flex: 2;
+}
+.item-label{
+  color: #999999;
+}
+.content{
+  box-sizing: border-box;
+  padding: 32rpx;
+}
+.content-title{
+  line-height: 40px;
+}
+.drugs-item{
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 40rpx;
+}
+.title-main{
+  font-size: 16px;
+  color: #000000;
+  vertical-align: middle;
+}
+.drugs-item-title{
+  overflow: hidden;
+}
+.item-bag{
+  float: right;
+}
+.item-value{
+  margin-right: 60rpx;
+}
+.drugs-cell{
+  margin-top: 20rpx;
+  text-indent: 2em;
+}
+.autograph{
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+.autograph-item{
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+.autograph-item:last-child{
+  border-bottom: none
+}
+.autograph-cell{
+  display: flex;
+  justify-content: space-between;
+}
+.item-image{
+  margin-top: 20rpx;
+  text-align: center;
+}
+.autograph-image{
+  width: 374rpx;
+  height: 150rpx;
+}
+
+.content-btn{
+  width: 100%;
+  padding: 20rpx 0;
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}
+.content-btn button{
+  width: 40%;
+  margin: 0 20rpx;
+  border-radius: 10px!important;
+  /* flex: 1; */
+}
+
+.popup-content{
+  width: 500rpx;
+  height: 328rpx;
+  box-sizing: border-box;
+  padding: 32rpx;
+  position: relative;
+  text-align: center;
+}
+.status{
+  margin: 20rpx 0;
+  color: #1989fa;
+}
+.tips{
+  margin-bottom: 40rpx;
+  font-size: 14px;
+  color: #999999;
+}
+.popup-btn{
+  margin: 0 20rpx;
+  border-radius: 10px!important;
+}
+.status van-icon{
+  vertical-align: middle;
+}
+.popup-text{
+  vertical-align: middle;
+}

@@ -1,0 +1,11 @@
+<!--pages/check/sign.wxml-->
+<view class="container">
+  <view class="title">我的签名</view>
+  <view class="images-box">
+    <image src="{{img}}" class="autograph-image"/>
+  </view>
+  <view class="tips">您正在为 {{name}} 签署医嘱，确认授权电子签名吗？</view>
+  <view>
+    <van-button type="info" block custom-class="btn" bind:tap="confirm">授权签名</van-button>
+  </view>
+</view>

@@ -1,0 +1,111 @@
+<!--pages/checked/detail.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="detail-state" src="/images/bh-detail.png" wx:if="{{result.status === 7}}" />
+    <image class="detail-state" src="/images/tg-detail.png" wx:if="{{result.status === 3 || result.status === 6}}" />
+    <text class="header-title header-set">{{APPNAME}}</text>
+    <van-tag custom-class="tag" round type="primary" wx:if="{{result.presType === 1}}">西药</van-tag>
+    <van-tag custom-class="tag" plain round type="primary" wx:if="{{result.presLabel === 0}}">普通</van-tag>
+    <van-tag custom-class="tag" plain round type="primary" wx:if="{{result.presLabel === 1}}">慢病</van-tag>
+    <van-tag custom-class="tag" plain round type="primary" wx:if="{{result.presLabel === 2}}">儿童</van-tag>
+    <view class="header-title">互联网医院处方笺</view>
+  </view>
+  <view class="detail-info">
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">姓名：</text>
+        <text class="item-text">{{pateintInfo.name}}</text>
+      </view>
+      <view class="cell-item">
+        <text class="item-label">性别：</text>
+        <text class="item-text">{{pateintInfo.sex}}</text>
+      </view>
+      <view class="cell-item">
+        <text class="item-label">年龄：</text>
+        <text class="item-text">{{pateintInfo.age}}</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item flex-more">
+        <text class="item-label">处方编号：</text>
+        <text class="item-text o-text">{{result.presCode}}</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">诊断：</text>
+        <text class="item-text">{{diagsValue}}</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">就诊时间：</text>
+        <text class="item-text">{{date}}</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">过敏史：</text>
+        <text class="item-text">{{emrInfo.allergyHistory}}</text>
+      </view>
+    </view>
+    <view class="info-cell bb">
+      <view class="cell-item">
+        <text class="item-label">既往史：</text>
+        <text class="item-text">{{emrInfo.pastHistory}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="content-title">RP</view>
+    <view class="drugs">
+      <view class="drugs-item" wx:for="{{drug}}" wx:key="index">
+        <view class="drugs-item-title">
+          <text class="title-main">{{index+1}}、{{item.drugName}}</text>
+          <text class="item-bag item-value">{{item.total}}{{item.totalUnit}}</text>
+        </view>
+        <view class="drugs-cell">
+          <!-- 口服 10g/次 3次/日 共3天 -->
+          <text class="item-value">{{item.mode}}</text>
+          <text class="item-value">{{item.dosage}}{{item.unit}}/次</text>
+          <text class="item-value">{{item.frequency}}</text>
+          <text class="item-value">共{{item.course}}天</text>
+        </view>
+        <view class="drugs-cell">
+          <text class="item-value">医嘱：{{item.remark || "无"}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="autograph">
+      <view class="autograph-item">
+        <view class="autograph-cell">
+          <view>医生签章</view>
+          <view>{{date}}</view>
+        </view>
+        <view class="item-image">
+          <image class="autograph-image" src="{{sign}}" />
+        </view>
+      </view>
+      <view class="autograph-item">
+        <view class="autograph-cell">
+          <view>药师签章</view>
+          <view>{{pharmacistCaTime}}</view>
+        </view>
+        <view class="item-image">
+          <image class="autograph-image" src="{{pharmacistCa}}" />
+        </view>
+      </view>
+    </view>
+
+    <view class="reject" wx:if="{{result.rejectContent}}">
+      <view class="autograph-cell">驳回原因</view>
+      <view class="reject-content">{{result.rejectContent}}</view>
+    </view>
+
+    <view style="margin-top: 40rpx">
+      <van-button bind:click="back" block plain type="info">返回</van-button>
+    </view>
+  </view>
+</view>

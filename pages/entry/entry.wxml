@@ -1,0 +1,77 @@
+<!--pages/entry/entry.wxml-->
+<view class="container">
+  <view class="entry" wx:if="{{isLoginShow}}">
+    <view class="container-top-bg">
+      <image class="bg-image" src="/images/index.png" />
+      <view class="card-login">
+        <van-tabs border="{{false}}" sticky>
+          <van-tab title="手机登录">
+            <van-cell custom-class="mt20">
+              <van-field
+                bind:change="inputChange"
+                border="{{ false }}"
+                center
+                clearable
+                data-input="phone"
+                left-icon="phone"
+                placeholder="请输入手机号"
+                use-button-slot
+                value="{{ phone }}"
+              >
+                <van-button
+                  bind:click="getCaptcha"
+                  bind:tap="getSms"
+                  custom-class="btn-style"
+                  plain
+                  size="small"
+                  slot="button"
+                  type="info"
+                  wx:if="{{btnshow}}"
+                >获取验证码</van-button>
+                <van-button disabled plain size="small" slot="button" type="info" wx:else>{{countDownNum}}秒后获取</van-button>
+              </van-field>
+            </van-cell>
+            <van-cell>
+              <van-field
+                bind:change="inputChange"
+                border="{{ false }}"
+                center
+                clearable
+                data-input="captcha"
+                left-icon="lock"
+                placeholder="请输入验证码"
+                value="{{ captcha }}"
+              ></van-field>
+            </van-cell>
+            <van-button bind:tap="login" block custom-class="mt40" round type="info">登录</van-button>
+          </van-tab>
+        </van-tabs>
+      </view>
+    </view>
+  </view>
+
+  <view class="authorize" wx:else>
+    <view class="container-top-bg">
+      <image class="bg-image" src="/images/index.png" />
+      <view class="card-authorize">
+        <view class="card-content text-center">
+          <view class="card-content-text">您已成功登陆，可授权使用当前微信登陆</view>
+          <view class="text-center content-icon">
+            <image class="wxlogo" src="/images/wx.png" />
+          </view>
+          <view class="text-center">
+            <!-- <van-button type="default" custom-class="content-btn" bind:tap="agreeAuthorize">暂不授权</van-button> -->
+            <van-button
+              bind:tap="agreeAuthorize"
+              custom-class="content-btn"
+              disabled="{{ loading }}"
+              loading="{{ loading }}"
+              open-type="getUserInfo"
+              type="info"
+            >同意授权</van-button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

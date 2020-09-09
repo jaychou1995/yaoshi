@@ -1,0 +1,50 @@
+<!--pages/check/index.wxml-->
+<view class="container">
+  <view class="pieces">共{{total || 0}}条</view>
+  <van-tabs active="{{ 0 }}" border="{{false}}">
+    <van-tab title="全部">
+      <view class="content" wx:if="{{dataList.length > 0}}">
+        <van-cell-group custom-class="card" wx:for="{{dataList}}" wx:key="index">
+          <van-cell
+            bind:click="toDetail"
+            custom-class="card-cell"
+            data-id="{{item.id}}"
+            label="处方编号：{{item.presCode}}"
+            label-class="card-label"
+            title="{{item.patientName}} {{item.createTime}}"
+            title-class="card-title"
+            title-width="500rpx"
+          >
+            <van-tag plain round slot="right-icon" type="primary" wx:if="{{item.presType === 1}}">西药</van-tag>
+            <van-tag plain round slot="right-icon" type="primary" wx:if="{{item.presType === 4}}">中药</van-tag>
+          </van-cell>
+        </van-cell-group>
+        <!-- <van-cell-group custom-class="card">
+          <van-cell title="处方编号：123907641T" label="张旭 2020-06-15 15:15:15" custom-class="card-cell" title-class="card-title" title-width="500rpx" bind:click="toDetail">
+            <van-tag slot="right-icon" plain type="primary">西药</van-tag>
+          </van-cell>
+        </van-cell-group>-->
+
+        <!-- <view class="card">
+          <view class="card-cell">
+            <view class="card-title">处方编号：1234511111111</view>
+            <view class="card-label">名字 2018-05-05</view>
+            <view class="card-value">
+              <van-tag slot="right-icon" plain type="primary">西药</van-tag>
+            </view>
+          </view>
+        </view>
+        <view class="card">
+          <view class="card-cell">
+            <view class="card-title">处方编号：12345</view>
+            <view class="card-label">名字 2018-05-05</view>
+            <view class="card-value">
+              <van-tag slot="right-icon" plain type="primary">西药</van-tag>
+            </view>
+          </view>
+        </view>-->
+      </view>
+      <errMsg wx:else />
+    </van-tab>
+  </van-tabs>
+</view>

@@ -1,0 +1,5 @@
+<!--components/errMsg/errMsg.wxml-->
+<view class="container">
+  <image class="error-image" src="/images/errmsg.png" />
+  <view class="error-text">{{title}}</view>
+</view>

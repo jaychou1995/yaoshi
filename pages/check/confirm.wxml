@@ -1,0 +1,150 @@
+<!--pages/check/confirm.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="header-title">***互联网医院处方笺</text>
+    <van-tag type="primary" custom-class="tag">西药</van-tag>
+    <van-tag plain type="primary" custom-class="tag">普通</van-tag>
+  </view>
+  <view class="detail-info">
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">类别：</text>
+        <text class="item-text">自费</text>
+      </view>
+      <view class="cell-item flex-more">
+        <text class="item-label">处方编号：</text>
+        <text class="item-text">223423423423</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">姓名：</text>
+        <text class="item-text">黄梵</text>
+      </view>
+      <view class="cell-item">
+        <text class="item-label">性别：</text>
+        <text class="item-text">男</text>
+      </view>
+      <view class="cell-item">
+        <text class="item-label">年龄：</text>
+        <text class="item-text">23岁</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">年龄：</text>
+        <text class="item-text">23岁</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">诊断：</text>
+        <text class="item-text">高血压、糖尿病</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">就诊时间：</text>
+        <text class="item-text">2020-06-30</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">过敏史：</text>
+        <text class="item-text">无</text>
+      </view>
+    </view>
+    <view class="info-cell">
+      <view class="cell-item">
+        <text class="item-label">既往史：</text>
+        <text class="item-text">胆囊炎</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="content-title">RP</view>
+    <view class="drugs">
+      <view class="drugs-item">
+        <view class="drugs-item-title">
+          <text class="title-main">1、板蓝根颗粒</text>
+          <text class="item-bag item-value">1袋</text>
+        </view>
+        <view class="drugs-cell">
+          <!-- 口服 10g/次 3次/日 共3天 -->
+          <text class="item-value">口服</text>
+          <text class="item-value">10g/次</text>
+          <text class="item-value">3次/日</text>
+          <text class="item-value">共3天</text>
+        </view>
+        <view class="drugs-cell">医嘱：多喝水，少抽烟</view>
+      </view>
+
+      <view class="drugs-item">
+        <view class="drugs-item-title">
+          <text class="title-main">1、板蓝根颗粒</text>
+          <text class="item-bag item-value">1袋</text>
+        </view>
+        <view class="drugs-cell">
+          <!-- 口服 10g/次 3次/日 共3天 -->
+          <text class="item-value">口服</text>
+          <text class="item-value">10g/次</text>
+          <text class="item-value">3次/日</text>
+          <text class="item-value">共3天</text>
+        </view>
+        <view class="drugs-cell">医嘱：多喝水，少抽烟</view>
+      </view>
+
+    </view>
+
+    <view class="autograph">
+      <view class="autograph-item">
+        <view class="autograph-cell">
+          <view>医生签章</view>
+          <view>2020-02-12  12:12:12</view>
+        </view>
+        <view class="item-image">
+          <image src="/images/dsh.png" class="autograph-image"/>
+        </view>
+      </view>
+      <view class="autograph-item">
+        <view class="autograph-cell">
+          <view>医生签章</view>
+          <view>2020-02-12  12:12:12</view>
+        </view>
+        <view class="item-image">
+          <image src="/images/dsh.png" class="autograph-image"/>
+        </view>
+      </view>
+    </view>
+
+    <view class="content-btn">
+      <van-button type="default" custom-class="btn-style">暂存</van-button>
+      <van-button type="info" bind:click="confirm" custom-class="btn-style">确认提交</van-button>
+    </view>
+  </view>
+
+  <van-popup show="{{ showSuccess }}" bind:close="onClose">
+    <view class="popup-content">
+      <view class="status"><van-icon name="passed" /><text class="popup-text">审方通过</text></view>
+      <view class="tips">您已完成审方，并签名成功</view>
+      <view class="btn-list">
+        <van-button type="default" custom-class="popup-btn">返回</van-button>
+        <van-button type="info" custom-class="popup-btn">下一方</van-button>
+      </view>
+    </view>
+  </van-popup>
+
+  <van-popup show="{{ showFail }}" bind:close="onClose">
+    <view class="popup-content">
+      <view class="status"><van-icon name="warning-o" /><text class="popup-text">驳回成功</text></view>
+      <view class="tips">您驳回的处方已经成功发给医生</view>
+      <view class="btn-list">
+        <van-button type="default" custom-class="popup-btn">返回</van-button>
+        <van-button type="primary" custom-class="popup-btn">下一方</van-button>
+      </view>
+    </view>
+  </van-popup>
+
+</view>
+

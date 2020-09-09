@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/entry/entry",
+    "pages/check/index",
+    "pages/check/detail",
+    "pages/check/reason",
+    "pages/checked/index",
+    "pages/checked/detail",
+    "pages/check/confirm",
+    "pages/check/sign"
+  ],
+  "usingComponents": {
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "errMsg": "/components/errMsg/errMsg"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "药师网",
+    "navigationBarTextStyle": "black"
+  },
+  "networkTimeout": {
+    "request": 20000,
+    "connectSocket": 20000,
+    "uploadFile": 20000,
+    "downloadFile": 20000
+  },
+  "sitemapLocation": "sitemap.json"
+}

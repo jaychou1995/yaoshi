@@ -1,0 +1,24 @@
+/**app.wxss**/
+page {
+  --primary-color: #0093dd;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  --search-action-text-color: var(--primary-color);
+  --search-bar-background-color: var(--background-color);
+  --tabs-bottom-bar-color: var(--primary-color);
+  --tab-active-text-color: var(--primary-color);
+  --radio-checked-icon-color: var(--primary-color);
+}
+.van-loading {
+  --loading-spinner-color: var(--primary-color);
+}
+page .van-divider {
+  margin: 0;
+  padding: 16rpx 0;
+  border-color: transparent;
+}
+page .van-empty {
+  padding: 0;
+}

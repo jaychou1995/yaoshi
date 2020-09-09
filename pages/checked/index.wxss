@@ -1,0 +1,54 @@
+/* pages/checked/index.wxss */
+.container{
+  box-sizing: border-box;
+  padding: 20rpx 32rpx;
+  position: relative;
+}
+.pieces{
+  position: absolute;
+  right: 46rpx;
+  top: 46rpx;
+  color: #999999;
+  text-align: right;
+  font-size: 14px;
+  z-index: 10;
+}
+.content{
+  margin-top: 20rpx;
+}
+.card{
+  position: relative;
+}
+.card-cell{
+  margin-bottom: 40rpx;
+  border: 1px solid rgba(0, 0, 0, 0.07)!important;
+  border-radius: 10px!important;
+  box-shadow:0px 0px 15px 0px rgba(0, 0, 0, 0.07);
+  padding: 40rpx!important;
+}
+.card-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 16px;
+  font-weight: 545;
+}
+.item-state{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.card .van-cell__value{
+  width: 0!important;
+  height: 0!important;
+}
+.container .van-tab{
+  max-width: 80px;
+}
+.card-label{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
